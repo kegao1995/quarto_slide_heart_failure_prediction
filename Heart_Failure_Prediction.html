@@ -30,6 +30,7 @@
     }
   </style>
   <link rel="stylesheet" href="Heart_Failure_Prediction_files/libs/revealjs/dist/theme/quarto.css">
+  <link rel="stylesheet" href="styles.css">
   <link href="Heart_Failure_Prediction_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="Heart_Failure_Prediction_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="Heart_Failure_Prediction_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -333,12 +334,48 @@
 </section>
 <section class="slide level2">
 
-<h3 id="introduction"><strong>Introduction</strong></h3>
+<h3 id="land-acknowledgement"><strong>Land Acknowledgement</strong></h3>
+<p>We would like to begin by acknowledging that the land on which we gather is the unceded territory of the Coast Salish Peoples, including the territories of the xwməθkwəy̓əm (Musqueam), Skwxwú7mesh (Squamish), Stó:lō and Səl̓ílwətaʔ/Selilwitulh (Tsleil- Waututh) Nations.</p>
+
+<img data-src="figure/land_acknowledgement.jpg" class="quarto-figure quarto-figure-center r-stretch" data-fig-width="15"><p class="caption">
+Figure&nbsp;1: MDoubrava/iStock/Getty Images Plus
+</p></section>
+<section class="slide level2">
+
+<h3 id="heart-disease-background"><strong>Heart Disease Background</strong></h3>
+
+<img data-src="figure/cardiovascular_stats.jpg" class="quarto-figure quarto-figure-center r-stretch" data-fig-width="15"><p class="caption">
+Figure&nbsp;2: Global Leading Causes of Death. Image made by Merari.
+</p></section>
+<section class="slide level2">
+
+
+<img data-src="figure/heart_failure_def.jpg" class="quarto-figure quarto-figure-center r-stretch" data-fig-width="20"><p class="caption">
+Figure&nbsp;3: Image by lybrate.
+</p></section>
+<section class="slide level2">
+
+<h3 id="what-is-our-project"><strong>What is our Project?</strong></h3>
 <ul>
-<li><p>Heart failure is a critical condition contributing to millions of deaths globally every year. Leveraging electronic medical records and machine learning techniques offers a promising approach to improving patient outcomes by predicting survival rates.</p></li>
-<li><p>In this silde, we will discuss how we built a logistic regression model to predict survival outcomes for heart failure patients, exploring its performance, challenges, and potential applications.</p></li>
+<li>Availability of electronic medical records from patients with heart failure collected during follow-up care.</li>
+<li>Use this data to create a model that predicts whether a patient with heart failure will die or survive.</li>
 </ul>
-</section>
+
+<img data-src="figure/medical_records_resized_half.jpg" class="quarto-figure quarto-figure-center r-stretch" data-fig-width="10" data-fig-height="5"><p class="caption">
+Figure&nbsp;4: Image by 247digitize
+</p></section>
+<section class="slide level2">
+
+<h3 id="why-does-it-matter"><strong>Why does it matter?</strong>*</h3>
+<ul>
+<li>improve clinical decision-making</li>
+<li>ease workload of doctors</li>
+<li>improve patient care</li>
+</ul>
+
+<img data-src="figure/happy_patient.jpg" class="quarto-figure quarto-figure-center r-stretch" data-fig-width="10" data-fig-height="5"><p class="caption">
+Figure&nbsp;5: Image by Antoni Shkraba
+</p></section>
 <section class="slide level2">
 
 <h3 id="dataset-overview"><strong>Dataset Overview</strong></h3>
@@ -368,10 +405,10 @@
 </section>
 <section class="slide level2">
 
-<p><small>The following plot <a href="#/fig-death-event-distributions" class="quarto-xref">Figure&nbsp;1</a> illustrate the probability density distributions of key features in the dataset, categorized by the outcome of the <strong>Death Event</strong> variable (True = patient passed away, False = patient survived). </small></p>
+<p><small>The following plot <a href="#/fig-death-event-distributions" class="quarto-xref">Figure&nbsp;6</a> illustrate the probability density distributions of key features in the dataset, categorized by the outcome of the <strong>Death Event</strong> variable (True = patient passed away, False = patient survived). </small></p>
 
 <img data-src="figure/Analyzing_Feature_Distributions_by_Death_Event.svg" class="quarto-figure quarto-figure-center r-stretch" data-fig-width="15"><p class="caption">
-Figure&nbsp;1: Analyzing Feature Distributions by Death Event
+Figure&nbsp;6: Analyzing Feature Distributions by Death Event
 </p></section>
 <section class="slide level2">
 
@@ -394,10 +431,10 @@ Figure&nbsp;1: Analyzing Feature Distributions by Death Event
 <section class="slide level2">
 
 <p><strong>Hyperparameter Tuning</strong>:<br>
-<small> Using cross-validation, we identified the best regularization parameter (<code>C = 0.0001</code>) from <a href="#/fig-training_cross_validation_scores" class="quarto-xref">Figure&nbsp;2</a>, achieving a cross-validation score of 0.83. This indicates that the model generalizes well without overfitting. </small></p>
+<small> Using cross-validation, we identified the best regularization parameter (<code>C = 0.0001</code>) from <a href="#/fig-training_cross_validation_scores" class="quarto-xref">Figure&nbsp;7</a>, achieving a cross-validation score of 0.83. This indicates that the model generalizes well without overfitting. </small></p>
 
 <img data-src="figure/Training_Cross-Validation_Scores.svg" class="quarto-figure quarto-figure-center r-stretch" data-fig-width="7"><p class="caption">
-Figure&nbsp;2: Training vs Cross-Validation Scores
+Figure&nbsp;7: Training vs Cross-Validation Scores
 </p></section>
 <section class="slide level2">
 

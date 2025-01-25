@@ -1,0 +1,7 @@
+/* Target captions for markdown-style images in Quarto Reveal.js */
+.reveal p.caption, 
+.reveal .quarto-float-caption {
+    font-size: 0.5em !important;  /* Reduce font size */
+    opacity: 0.9 !important;  /* Make it more transparent */
+    text-align: center !important; /* Center align */
+}

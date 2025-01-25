@@ -1,7 +1,124 @@
 ---
-title: "Heart_Failure_Prediction"
+title: "Heart Failure Prediction"
+format: revealjs
 ---
 
-## Quarto
+### **Introduction**
+- Heart failure is a critical condition contributing to millions of deaths globally every year. Leveraging electronic medical records and machine learning techniques offers a promising approach to improving patient outcomes by predicting survival rates. 
 
-Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+- In this silde, we will discuss how we built a logistic regression model to predict survival outcomes for heart failure patients, exploring its performance, challenges, and potential applications.
+
+---
+
+### **Dataset Overview**
+The dataset used for this analysis consists of 299 patients, including 105 women and 194 men aged between 40 and 95 years. It includes 13 clinical, body, and lifestyle features, such as age, anemia status, blood parameters, and follow-up duration. The target variable, `DEATH_EVENT`, indicates whether a patient survived or passed away during the follow-up period, which averaged 130 days.
+
+---
+
+Key challenges with this dataset:
+
+- **Small sample size**: Only 299 rows.
+- **Class imbalance**: 67.89% of patients survived, while only 32.11% passed away, making it crucial to address imbalance during modeling.
+
+---
+
+### **Exploratory Data Analysis**
+Our analysis revealed the following:
+
+- No missing values in the dataset, eliminating the need for imputation.
+- Low correlations between features, indicating no significant multicollinearity issues.
+
+Key features included:
+
+- **Ejection fraction**: The percentage of blood ejected from the heart during contraction.
+- **Serum creatinine**: Indicates kidney function and has implications for heart health.
+
+---
+
+<small>The following plot @fig-death-event-distributions illustrate the probability density distributions of key features in the dataset, categorized by the outcome of the **Death Event** variable (True = patient passed away, False = patient survived). </small>
+
+![Analyzing Feature Distributions by Death Event](figure/Analyzing_Feature_Distributions_by_Death_Event.svg){#fig-death-event-distributions fig-width=15 fig-align="center"}
+
+---
+
+- **Time:** Patients who survived (False) tend to have longer follow-up periods compared to those who passed away (True).
+- **Serum Sodium:** Higher serum sodium levels appear to correlate with better survival rates.
+- **Ejection Fraction:** Patients with higher ejection fraction percentages are more likely to survive.
+
+---
+
+### **Modeling Approach**
+We compared three algorithms—Decision Tree, KNN, and Logistic Regression—and selected logistic regression due to its:
+
+- Interpretability.
+- Robustness with smaller datasets.
+- Ability to balance bias and variance effectively.
+
+---
+
+**Hyperparameter Tuning**:  
+<small>
+Using cross-validation, we identified the best regularization parameter (`C = 0.0001`) from @fig-training_cross_validation_scores, achieving a cross-validation score of 0.83. This indicates that the model generalizes well without overfitting.
+</small>
+
+![Training vs Cross-Validation Scores](figure/Training_Cross-Validation_Scores.svg){#fig-training_cross_validation_scores fig-width=7 fig-align="center"}
+---
+
+### **Model Performance**
+The logistic regression model achieved:
+
+- **Accuracy**: 0.82
+- **Precision**: 0.70 (moderately conservative in predicting deaths)
+- **Recall**: 0.74 (captures the majority of high-risk cases)
+- **F1-Score**: 0.72 (good balance between precision and recall)
+
+---  
+
+**Confusion Matrix**
+
+The confusion matrix below shows the performance of the classification model in predicting survival outcomes:
+
+| **Actual \ Predicted** | **Survived (0)** | **Deceased (1)** |
+|------------------------|------------------|------------------|
+| **Survived (0)**       | 35               | 6                |
+| **Deceased (1)**       | 5                | 14               |
+
+- **True Positives**: 14 patients correctly identified as deceased.
+- **True Negatives**: 35 patients correctly identified as survivors.
+- **False Positives**: 6 survivors misclassified as deceased.
+- **False Negatives**: 5 deaths missed by the model.
+
+---
+
+### **Key Insights**
+1. **Feature Importance**:  
+   - Platelets and ejection fraction were the most influential features in predicting survival.
+   - Other significant features included serum creatinine and creatinine phosphokinase.
+
+2. **Challenges**:  
+   - Class imbalance led to potential biases in the model.
+   - Limited data availability restricted the model’s ability to fully generalize.
+
+---
+
+### **Key Insights**
+
+3. **Opportunities for Improvement**:  
+   - Collecting a larger, more diverse dataset.
+   - Experimenting with ensemble models (e.g., Random Forest, Gradient Boosting).
+
+---
+
+### **Real-World Applications**
+This model demonstrates the potential to support clinicians in:
+
+- Identifying high-risk patients for early intervention.
+- Allocating medical resources more effectively.
+- Enhancing personalized treatment plans based on patient profiles.
+
+---
+
+### **Conclusion**
+- Our logistic regression model serves as a foundational tool in predicting survival rates for heart failure patients. 
+- While its performance is promising, further optimization and larger datasets could significantly improve its clinical utility. 
+- With advancements in machine learning and data collection, such predictive models hold immense potential in transforming healthcare decision-making and saving lives.

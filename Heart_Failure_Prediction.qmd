@@ -161,48 +161,51 @@ We selected the logistic regression due to its:
 
 ---
 
-### **Model Performance**
-The logistic regression model achieved:
-
-- **Accuracy**: 0.82
-- **Precision**: 0.70 (moderately conservative in predicting deaths)
-- **Recall**: 0.74 (captures the majority of high-risk cases)
-- **F1-Score**: 0.72 (good balance between precision and recall)
-
----  
+### **Results**
 
 **Confusion Matrix**
-
-The confusion matrix below shows the performance of the classification model in predicting survival outcomes:
 
 | **Actual \ Predicted** | **Survived (0)** | **Deceased (1)** |
 |------------------------|------------------|------------------|
 | **Survived (0)**       | 35               | 6                |
 | **Deceased (1)**       | 5                | 14               |
 
-- **True Positives**: 14 patients correctly identified as deceased.
-- **True Negatives**: 35 patients correctly identified as survivors.
-- **False Positives**: 6 survivors misclassified as deceased.
-- **False Negatives**: 5 deaths missed by the model.
+82% Accuracy    70% Precision    74% Recall     0.72 F1-score
+
+- The model is moderately accurate in predicting deaths
+- Captures majority of the high-risk patients
+- However, model needs a serious improvement in Recall by reducing false negatives
 
 ---
 
-### **Key Insights**
-1. **Feature Importance**:  
-   - Platelets and ejection fraction were the most influential features in predicting survival.
-   - Other significant features included serum creatinine and creatinine phosphokinase.
+## Why do we want to improve recall?
+ 
+![Performance Radar](figure/results_radar.png){#fig-radar fig-width=10 fig-height=10 fig-align="center"}
 
-2. **Challenges**:  
-   - Class imbalance led to potential biases in the model.
-   - Limited data availability restricted the model’s ability to fully generalize.
+- Risk awareness is very important in healthcare predictive modelling
+- It's often safer to overestimate positive outcomes than to risk missing critical conditions
+
+<span style="font-size:18px;">"In medicine, the most dangerous thing is not to make a mistake, but to fail to see the potential risks that lie hidden"  - Dr. Eric Topol </span>
 
 ---
 
-### **Key Insights**
+### **Challenges in Healthcare Data for Predictive Modeling**
 
-3. **Opportunities for Improvement**:  
-   - Collecting a larger, more diverse dataset.
-   - Experimenting with ensemble models (e.g., Random Forest, Gradient Boosting).
+- Scarcity of healthcare data: Limited patient records available
+- Data quality issues: Healthcare data is often incomplete, messy or hidden due to confidentiality 
+- Class imbalance in responses: Significantly fewer instances of Death Event = `1` compared to '0'
+
+![](figure/class_imbalance.png){#fig-radar fig-width=6 fig-height=6 fig-align="center"}
+
+---
+
+### **Proposed Improvements: **
+
+- Collect higher-quality patient data (clean, complete and diverse data)
+- Include additional features like genetic predispositions, family medical history and lifestyle factors
+- Experimenting with ensemble models (e.g., Random Forest, Gradient Boosting) or Neural Networks
+
+This can be achieved by improving data and AI literacy and ensuring medical professionals actively engage in maintaining clean, diverse and complete medical records
 
 ---
 

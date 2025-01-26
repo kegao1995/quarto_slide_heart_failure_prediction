@@ -433,22 +433,104 @@ Figure&nbsp;7: Analyzing Feature Distributions by Death Event
 </section>
 <section class="slide level2">
 
-<h3 id="modeling-approach"><strong>Modeling Approach</strong></h3>
-<p>We compared three algorithms—Decision Tree, KNN, and Logistic Regression—and selected logistic regression due to its:</p>
+<h3 id="data-preprocessing"><strong>Data Preprocessing</strong></h3>
 <ul>
-<li>Interpretability.</li>
-<li>Robustness with smaller datasets.</li>
-<li>Ability to balance bias and variance effectively.</li>
+<li><strong>Data Split:</strong> Train size = 0.8 | Test size = 0.2</li>
+<li><strong>Column Transformer:</strong>
+<ul>
+<li>StandardScaler() on numeric columns, such as age and time</li>
+<li>OneHotEncoder() on binary columns, such as diabetes and smoking</li>
+</ul></li>
 </ul>
 </section>
 <section class="slide level2">
 
-<p><strong>Hyperparameter Tuning</strong>:<br>
-<small> Using cross-validation, we identified the best regularization parameter (<code>C = 0.0001</code>) from <a href="#/fig-training_cross_validation_scores" class="quarto-xref">Figure&nbsp;8</a>, achieving a cross-validation score of 0.83. This indicates that the model generalizes well without overfitting. </small></p>
+<h3 id="correlations-matrix"><strong>Correlations Matrix</strong></h3>
+<ul>
+<li>The following plot illustrates the correlations between all features:</li>
+</ul>
 
-<img data-src="figure/Training_Cross-Validation_Scores.svg" class="quarto-figure quarto-figure-center r-stretch" data-fig-width="7"><p class="caption">
-Figure&nbsp;8: Training vs Cross-Validation Scores
-</p></section>
+<img data-src="figure/correlation_heatmap.png" class="quarto-figure quarto-figure-center r-stretch" data-fig-width="15"></section>
+<section class="slide level2">
+
+<h3 id="correlation-matrix-continue"><strong>Correlation Matrix (continue)</strong></h3>
+<p>The correlations between all pairs of the features are below 0.5:</p>
+<ul>
+<li>No anomalous correlations between features</li>
+<li>No need to drop any of the features</li>
+</ul>
+</section>
+<section class="slide level2">
+
+<h3 id="modeling-approach"><strong>Modeling Approach</strong></h3>
+<p>We compared three algorithms:</p>
+<ul>
+<li>Decision Tree</li>
+<li>K-Nearest Neighbors (KNN)</li>
+<li>Logistic Regression</li>
+</ul>
+</section>
+<section class="slide level2">
+
+<h3 id="cross-validation"><strong>Cross Validation</strong></h3>
+<ul>
+<li>Decision Tree: <img data-src="figure/Decision_Tree_CV.png" data-fig-width="50%">
+<ul>
+<li><span style="color:red">overfitting</span></li>
+<li><span style="color:red">sensitive to small data changes</span></li>
+<li><span style="color:red">potential bias towards dominant classes in umbalanced datasets</span></li>
+</ul></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<h3 id="cross-validationcontinue"><strong>Cross Validation(continue)</strong></h3>
+<ul>
+<li>KNN and Logistic Regression:
+<ul>
+<li>GridSearchCV</li>
+<li>results:</li>
+</ul></li>
+</ul>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th><strong>Model</strong></th>
+<th><strong>Mean test score</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>KNN</strong></td>
+<td>0.777899</td>
+</tr>
+<tr class="even">
+<td><strong>Logistic Regression</strong></td>
+<td>0.828261 (with C = 0.0001)</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Best model: <span style="color:blue">Logistic Regression model</span></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<h3 id="hyperparameter-tuning"><strong>Hyperparameter Tuning</strong></h3>
+<p><strong>(Logistic Regression)</strong></p>
+<p><small> The best regularization parameter is C = 0.0001, with a cross-validation score of 0.83. The model generalizes well without overfitting. </small></p>
+
+<img data-src="figure/Training_Cross-Validation_Scores.svg" class="quarto-figure quarto-figure-center r-stretch" data-fig-width="7"></section>
+<section class="slide level2">
+
+<h3 id="model-selection"><strong>Model Selection</strong></h3>
+<p>We selected the logistic regression due to its:</p>
+<ul>
+<li>Interpretability</li>
+<li>Robustness with smaller datasets</li>
+<li>Ability to balance bias and variance effectively <img data-src="figure/Model_val_process.png" data-fig-width="40%"></li>
+</ul>
+</section>
 <section class="slide level2">
 
 <h3 id="model-performance"><strong>Model Performance</strong></h3>
@@ -524,7 +606,7 @@ Figure&nbsp;8: Training vs Cross-Validation Scores
 <h3 id="conclusion"><strong>Conclusion</strong></h3>
 
 <img data-src="figure/conclusion_img.jpg" class="quarto-figure quarto-figure-center r-stretch" data-fig-width="10" data-fig-height="5"><p class="caption">
-Figure&nbsp;9: Image by Quasa
+Figure&nbsp;8: Image by Quasa
 </p></section>
 <section class="slide level2">
 
@@ -538,7 +620,7 @@ Figure&nbsp;9: Image by Quasa
 <h3 id="questions"><strong>Questions?</strong></h3>
 
 <img data-src="figure/panda.jpg" class="quarto-figure quarto-figure-center r-stretch" data-fig-width="15"><p class="caption">
-Figure&nbsp;10: MDS Panda
+Figure&nbsp;9: MDS Panda
 </p><div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 

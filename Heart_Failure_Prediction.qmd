@@ -85,21 +85,80 @@ Key features included:
 
 ---
 
-### **Modeling Approach**
-We compared three algorithms—Decision Tree, KNN, and Logistic Regression—and selected logistic regression due to its:
-
-- Interpretability.
-- Robustness with smaller datasets.
-- Ability to balance bias and variance effectively.
+### **Data Preprocessing**
+- **Data Split:** Train size = 0.8 | Test size = 0.2
+- **Column Transformer:** 
+   - StandardScaler() on numeric columns, such as age and time
+   - OneHotEncoder() on binary columns, such as diabetes and smoking
 
 ---
 
-**Hyperparameter Tuning**:  
+### **Correlations Matrix**
+- The following plot illustrates the correlations between all features:
+
+![](figure/correlation_heatmap.png){fig-width=15 fig-align="center"}
+---
+
+### **Correlation Matrix (continue)**
+The correlations between all pairs of the features are below 0.5:
+
+- No anomalous correlations between features
+- No need to drop any of the features
+
+---
+
+### **Modeling Approach**
+We compared three algorithms:
+
+- Decision Tree
+- K-Nearest Neighbors (KNN)
+- Logistic Regression 
+
+---
+
+### **Cross Validation**
+- Decision Tree:
+![](figure/Decision_Tree_CV.png){fig-width=50%}
+   - <span style="color:red">overfitting</span>
+   - <span style="color:red">sensitive to small data changes</span>
+   - <span style="color:red">potential bias towards dominant classes in umbalanced datasets</span>
+
+---
+
+### **Cross Validation(continue)** 
+- KNN and Logistic Regression:
+   - GridSearchCV
+   - results:
+   
+| **Model**              | **Mean test score**               |
+|------------------------|-----------------------------------|
+| **KNN**                | 0.777899                          |
+| **Logistic Regression**| 0.828261 (with C = 0.0001)        |
+
+   - Best model: <span style="color:blue">Logistic Regression model</span>
+
+---
+
+### **Hyperparameter Tuning** 
+**(Logistic Regression)**
+
 <small>
-Using cross-validation, we identified the best regularization parameter (`C = 0.0001`) from @fig-training_cross_validation_scores, achieving a cross-validation score of 0.83. This indicates that the model generalizes well without overfitting.
+The best regularization parameter is C = 0.0001, with a cross-validation score of 0.83.
+The model generalizes well without overfitting.
 </small>
 
-![Training vs Cross-Validation Scores](figure/Training_Cross-Validation_Scores.svg){#fig-training_cross_validation_scores fig-width=7 fig-align="center"}
+![](figure/Training_Cross-Validation_Scores.svg){fig-width=7 fig-align="center"}
+
+---
+
+### **Model Selection**
+We selected the logistic regression due to its:
+
+- Interpretability
+- Robustness with smaller datasets
+- Ability to balance bias and variance effectively
+![](figure/Model_val_process.png){fig-width=40%}
+
 ---
 
 ### **Model Performance**

@@ -10,6 +10,7 @@
 <link href="Heart_Failure_Prediction_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.5.56">
 
+  <meta name="author" content="Merari Santana, Ke Gao, Yuhan Fan, Gurmehak Kaur">
   <title>Heart Failure Prediction</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -329,6 +330,11 @@
   <h1 class="title">Heart Failure Prediction</h1>
 
 <div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Merari Santana, Ke Gao, Yuhan Fan, Gurmehak Kaur 
+</div>
+</div>
 </div>
 
 </section>
@@ -366,15 +372,22 @@ Figure&nbsp;4: Image by 247digitize
 </p></section>
 <section class="slide level2">
 
-<h3 id="why-does-it-matter"><strong>Why does it matter?</strong>*</h3>
+<h3 id="why-does-it-matter"><strong>Why does it matter?</strong></h3>
 <ul>
 <li>improve clinical decision-making</li>
 <li>ease workload of doctors</li>
-<li>improve patient care</li>
+<li>enhance patient care</li>
 </ul>
 
 <img data-src="figure/happy_patient.jpg" class="quarto-figure quarto-figure-center r-stretch" data-fig-width="10" data-fig-height="5"><p class="caption">
 Figure&nbsp;5: Image by Antoni Shkraba
+</p></section>
+<section class="slide level2">
+
+<h3 id="presentation-outline"><strong>Presentation Outline</strong></h3>
+
+<img data-src="figure/presentation_outline.jpg" class="quarto-figure quarto-figure-center r-stretch" data-fig-width="10" data-fig-height="5"><p class="caption">
+Figure&nbsp;6: Image by Merari
 </p></section>
 <section class="slide level2">
 
@@ -405,10 +418,10 @@ Figure&nbsp;5: Image by Antoni Shkraba
 </section>
 <section class="slide level2">
 
-<p><small>The following plot <a href="#/fig-death-event-distributions" class="quarto-xref">Figure&nbsp;6</a> illustrate the probability density distributions of key features in the dataset, categorized by the outcome of the <strong>Death Event</strong> variable (True = patient passed away, False = patient survived). </small></p>
+<p><small>The following plot <a href="#/fig-death-event-distributions" class="quarto-xref">Figure&nbsp;7</a> illustrate the probability density distributions of key features in the dataset, categorized by the outcome of the <strong>Death Event</strong> variable (True = patient passed away, False = patient survived). </small></p>
 
 <img data-src="figure/Analyzing_Feature_Distributions_by_Death_Event.svg" class="quarto-figure quarto-figure-center r-stretch" data-fig-width="15"><p class="caption">
-Figure&nbsp;6: Analyzing Feature Distributions by Death Event
+Figure&nbsp;7: Analyzing Feature Distributions by Death Event
 </p></section>
 <section class="slide level2">
 
@@ -431,10 +444,10 @@ Figure&nbsp;6: Analyzing Feature Distributions by Death Event
 <section class="slide level2">
 
 <p><strong>Hyperparameter Tuning</strong>:<br>
-<small> Using cross-validation, we identified the best regularization parameter (<code>C = 0.0001</code>) from <a href="#/fig-training_cross_validation_scores" class="quarto-xref">Figure&nbsp;7</a>, achieving a cross-validation score of 0.83. This indicates that the model generalizes well without overfitting. </small></p>
+<small> Using cross-validation, we identified the best regularization parameter (<code>C = 0.0001</code>) from <a href="#/fig-training_cross_validation_scores" class="quarto-xref">Figure&nbsp;8</a>, achieving a cross-validation score of 0.83. This indicates that the model generalizes well without overfitting. </small></p>
 
 <img data-src="figure/Training_Cross-Validation_Scores.svg" class="quarto-figure quarto-figure-center r-stretch" data-fig-width="7"><p class="caption">
-Figure&nbsp;7: Training vs Cross-Validation Scores
+Figure&nbsp;8: Training vs Cross-Validation Scores
 </p></section>
 <section class="slide level2">
 
@@ -508,23 +521,25 @@ Figure&nbsp;7: Training vs Cross-Validation Scores
 </section>
 <section class="slide level2">
 
-<h3 id="real-world-applications"><strong>Real-World Applications</strong></h3>
-<p>This model demonstrates the potential to support clinicians in:</p>
-<ul>
-<li>Identifying high-risk patients for early intervention.</li>
-<li>Allocating medical resources more effectively.</li>
-<li>Enhancing personalized treatment plans based on patient profiles.</li>
-</ul>
+<h3 id="conclusion"><strong>Conclusion</strong></h3>
+
+<img data-src="figure/conclusion_img.jpg" class="quarto-figure quarto-figure-center r-stretch" data-fig-width="10" data-fig-height="5"><p class="caption">
+Figure&nbsp;9: Image by Quasa
+</p></section>
+<section class="slide level2">
+
+<h3 id="references"><strong>References</strong></h3>
+<p>Chicco, D., &amp; Jurman, G. (2020). <em>Machine learning can predict survival of patients with heart failure from serum creatinine and ejection fraction alone</em>. BMC Medical Informatics.</p>
+<p>Dua, D., &amp; Graff, C. (2017). <em>UCI Machine Learning Repository</em>. University of California, Irvine, School of Information; Computer Sciences. <a href="http://archive.ics.uci.edu/ml">http://archive.ics.uci.edu/ml</a></p>
+<p>Mayo Clinic. (n.d.). <em>Heart failure - Symptoms and causes</em>. Mayo Clinic. Retrieved January 25, 2025, from <a href="https://www.mayoclinic.org/diseases-conditions/heart-failure/symptoms-causes/syc-20373142">https://www.mayoclinic.org/diseases-conditions/heart-failure/symptoms-causes/syc-20373142</a></p>
 </section>
 <section class="slide level2">
 
-<h3 id="conclusion"><strong>Conclusion</strong></h3>
-<ul>
-<li>Our logistic regression model serves as a foundational tool in predicting survival rates for heart failure patients.</li>
-<li>While its performance is promising, further optimization and larger datasets could significantly improve its clinical utility.</li>
-<li>With advancements in machine learning and data collection, such predictive models hold immense potential in transforming healthcare decision-making and saving lives.</li>
-</ul>
-<div class="quarto-auto-generated-content">
+<h3 id="questions"><strong>Questions?</strong></h3>
+
+<img data-src="figure/panda.jpg" class="quarto-figure quarto-figure-center r-stretch" data-fig-width="15"><p class="caption">
+Figure&nbsp;10: MDS Panda
+</p><div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
 </div>

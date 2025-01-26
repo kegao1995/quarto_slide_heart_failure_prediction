@@ -1,5 +1,6 @@
 ---
 title: "Heart Failure Prediction"
+author: Merari Santana, Ke Gao, Yuhan Fan, Gurmehak Kaur
 format:
   revealjs:
     css: styles.css
@@ -38,6 +39,12 @@ We would like to begin by acknowledging that the land on which we gather is the 
 - enhance patient care
 
 ![Image by Antoni Shkraba](figure/happy_patient.jpg){#fig-happy-patient fig-width=10 fig-height=5 fig-align="center"}
+
+---
+
+### **Presentation Outline**
+
+![Image by Merari](figure/presentation_outline.jpg){#fig-presentation fig-width=10 fig-height=5 fig-align="center"}
 
 ---
 
@@ -140,16 +147,23 @@ The confusion matrix below shows the performance of the classification model in 
 
 ---
 
-### **Real-World Applications**
-This model demonstrates the potential to support clinicians in:
+### **Conclusion**
 
-- Identifying high-risk patients for early intervention.
-- Allocating medical resources more effectively.
-- Enhancing personalized treatment plans based on patient profiles.
+![Image by Quasa](figure/conclusion_img.jpg){#fig-presentation fig-width=10 fig-height=5 fig-align="center"}
 
 ---
 
-### **Conclusion**
-- Our logistic regression model serves as a foundational tool in predicting survival rates for heart failure patients. 
-- While its performance is promising, further optimization and larger datasets could significantly improve its clinical utility. 
-- With advancements in machine learning and data collection, such predictive models hold immense potential in transforming healthcare decision-making and saving lives.
+### **References**  
+
+Chicco, D., & Jurman, G. (2020). *Machine learning can predict survival of patients with heart failure from serum creatinine and ejection fraction alone*. BMC Medical Informatics.  
+
+Dua, D., & Graff, C. (2017). *UCI Machine Learning Repository*. University of California, Irvine, School of Information; Computer Sciences. [http://archive.ics.uci.edu/ml](http://archive.ics.uci.edu/ml)  
+
+Mayo Clinic. (n.d.). *Heart failure - Symptoms and causes*. Mayo Clinic. Retrieved January 25, 2025, from [https://www.mayoclinic.org/diseases-conditions/heart-failure/symptoms-causes/syc-20373142](https://www.mayoclinic.org/diseases-conditions/heart-failure/symptoms-causes/syc-20373142)  
+
+---
+
+### **Questions?**
+
+![MDS Panda](figure/panda.jpg){#fig-panda fig-width=15 fig-align="center"} 
+

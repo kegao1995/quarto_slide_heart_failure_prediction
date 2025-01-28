@@ -97,6 +97,7 @@ Key features included:
 - The following plot illustrates the correlations between all features:
 
 ![](figure/correlation_heatmap.png){fig-width=15 fig-align="center"}
+
 ---
 
 ### **Correlation Matrix (continue)**
@@ -167,45 +168,52 @@ We selected the logistic regression due to its:
 
 | **Actual \ Predicted** | **Survived (0)** | **Deceased (1)** |
 |------------------------|------------------|------------------|
-| **Survived (0)**       | 35               | 6                |
-| **Deceased (1)**       | 5                | 14               |
+| **Survived (0)**       | 35 (TP)              | 6  (FP)              |
+| **Deceased (1)**       | 5  (FN)              | 14  (TN)            |
 
-82% Accuracy    70% Precision    74% Recall     0.72 F1-score
+![](figure/accuracy.jpeg){fig-width=7 fig-align="center"}
 
-- The model is moderately accurate in predicting deaths
+---
+
+![Performance Radar](figure/results_radar.png){#fig-radar fig-width=10 fig-height=10 fig-align="center"}
+
 - Captures majority of the high-risk patients
-- However, model needs a serious improvement in Recall by reducing false negatives
+- Moderately accurate - conservative
+![](figure/recall.jpeg){fig-width=7 fig-align="rigth"}
 
 ---
 
 ## Why do we want to improve recall?
- 
-![Performance Radar](figure/results_radar.png){#fig-radar fig-width=10 fig-height=10 fig-align="center"}
 
-- Risk awareness is very important in healthcare predictive modelling
-- It's often safer to overestimate positive outcomes than to risk missing critical conditions
+![Risk Awareness](figure/risk_awareness.png){#fig-radar fig-width=7 fig-height=7 fig-align="center"}
 
-<span style="font-size:18px;">"In medicine, the most dangerous thing is not to make a mistake, but to fail to see the potential risks that lie hidden"  - Dr. Eric Topol </span>
+"In medicine, the most dangerous thing is not to make a mistake, but to fail to see the potential risks that lie hidden"  - Dr. Eric Topol 
 
 ---
 
 ### **Challenges in Healthcare Data for Predictive Modeling**
 
-- Scarcity of healthcare data: Limited patient records available
-- Data quality issues: Healthcare data is often incomplete, messy or hidden due to confidentiality 
-- Class imbalance in responses: Significantly fewer instances of Death Event = `1` compared to '0'
+Patient Data is:
 
-![](figure/class_imbalance.png){#fig-radar fig-width=6 fig-height=6 fig-align="center"}
+       Scarce            Incomplete              
+ Hidden due to confidenciality    Messy
+   Imbalanced class       Inconsistent
+
+![](figure/class_imbalance.png){#fig-radar fig-width=8 fig-height=8 fig-align="center"}
 
 ---
 
-### **Proposed Improvements: **
+![](figure/patient_data.png){#fig-radar fig-width=8 fig-height=8 fig-align="center"}
 
-- Collect higher-quality patient data (clean, complete and diverse data)
-- Include additional features like genetic predispositions, family medical history and lifestyle factors
-- Experimenting with ensemble models (e.g., Random Forest, Gradient Boosting) or Neural Networks
+---
 
-This can be achieved by improving data and AI literacy and ensuring medical professionals actively engage in maintaining clean, diverse and complete medical records
+### **Proposed Improvements **
+
+- Collect higher-quality patient data 
+- Include diverse features (genetic predispositions, lifestyle factors)
+- Experiment with ensemble models or Neural Networks
+
+![Improve AI & Data literacy in Healthcare](figure/data_lit.png){#fig-radar fig-width=8 fig-height=8 fig-align="center"}
 
 ---
 

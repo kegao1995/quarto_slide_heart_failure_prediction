@@ -122,7 +122,7 @@ We compared three algorithms:
 ![](figure/Decision_Tree_CV.png){fig-width=50%}
    - <span style="color:red">overfitting</span>
    - <span style="color:red">sensitive to small data changes</span>
-   - <span style="color:red">potential bias towards dominant classes in umbalanced datasets</span>
+   - <span style="color:red">bias towards dominant classes in unbalanced datasets</span>
 
 ---
 
@@ -158,6 +158,11 @@ We selected the logistic regression due to its:
 - Interpretability
 - Robustness with smaller datasets
 - Ability to balance bias and variance effectively
+
+---
+
+### **Diagram**
+
 ![](figure/Model_val_process.png){fig-width=40%}
 
 ---

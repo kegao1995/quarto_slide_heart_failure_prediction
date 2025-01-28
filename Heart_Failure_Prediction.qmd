@@ -97,6 +97,7 @@ Key features included:
 - The following plot illustrates the correlations between all features:
 
 ![](figure/correlation_heatmap.png){fig-width=15 fig-align="center"}
+
 ---
 
 ### **Correlation Matrix (continue)**
@@ -121,7 +122,7 @@ We compared three algorithms:
 ![](figure/Decision_Tree_CV.png){fig-width=50%}
    - <span style="color:red">overfitting</span>
    - <span style="color:red">sensitive to small data changes</span>
-   - <span style="color:red">potential bias towards dominant classes in umbalanced datasets</span>
+   - <span style="color:red">bias towards dominant classes in unbalanced datasets</span>
 
 ---
 
@@ -157,52 +158,70 @@ We selected the logistic regression due to its:
 - Interpretability
 - Robustness with smaller datasets
 - Ability to balance bias and variance effectively
+
+---
+
+### **Diagram**
+
 ![](figure/Model_val_process.png){fig-width=40%}
 
 ---
 
-### **Model Performance**
-The logistic regression model achieved:
-
-- **Accuracy**: 0.82
-- **Precision**: 0.70 (moderately conservative in predicting deaths)
-- **Recall**: 0.74 (captures the majority of high-risk cases)
-- **F1-Score**: 0.72 (good balance between precision and recall)
-
----  
+### **Results**
 
 **Confusion Matrix**
 
-The confusion matrix below shows the performance of the classification model in predicting survival outcomes:
-
 | **Actual \ Predicted** | **Survived (0)** | **Deceased (1)** |
 |------------------------|------------------|------------------|
-| **Survived (0)**       | 35               | 6                |
-| **Deceased (1)**       | 5                | 14               |
+| **Survived (0)**       | 35 (TP)              | 6  (FP)              |
+| **Deceased (1)**       | 5  (FN)              | 14  (TN)            |
 
-- **True Positives**: 14 patients correctly identified as deceased.
-- **True Negatives**: 35 patients correctly identified as survivors.
-- **False Positives**: 6 survivors misclassified as deceased.
-- **False Negatives**: 5 deaths missed by the model.
+![](figure/accuracy.jpeg){fig-width=7 fig-align="center"}
 
 ---
 
-### **Key Insights**
-1. **Feature Importance**:  
-   - Platelets and ejection fraction were the most influential features in predicting survival.
-   - Other significant features included serum creatinine and creatinine phosphokinase.
+### **Performance Matrices**
 
-2. **Challenges**:  
-   - Class imbalance led to potential biases in the model.
-   - Limited data availability restricted the model’s ability to fully generalize.
+![Performance Radar](figure/results_radar.png){#fig-radar fig-height=9 fig-align="center"}
+
+- Captures majority of the high-risk patients, moderately accurate, conservative
+- Recall = True Positive Rate = 74%
 
 ---
 
-### **Key Insights**
+## Why do we want to improve recall?
 
-3. **Opportunities for Improvement**:  
-   - Collecting a larger, more diverse dataset.
-   - Experimenting with ensemble models (e.g., Random Forest, Gradient Boosting).
+![Risk Awareness](figure/risk_awareness.png){#fig-radar fig-width=7 fig-height=7 fig-align="center"}
+
+"In medicine, the most dangerous thing is not to make a mistake, but to fail to see the potential risks that lie hidden"  - Dr. Eric Topol 
+
+
+---
+
+### **Challenges with Healthcare Data**
+
+Patient Data is:
+
+
+      Scarce            Incomplete              
+      Hidden (confidencial)    Messy
+      Imbalanced class       Inconsistent
+
+![](figure/class_imbalance.png){#fig-radar fig-width=7 fig-height=7 fig-align="center"}
+
+---
+
+![Patient Data Sample](figure/patient_data.png){#fig-radar fig-width=8 fig-height=8 fig-align="center"}
+
+---
+
+### **Proposed Improvements **
+
+- Collect higher-quality patient data 
+- Include diverse features (genetic predispositions, lifestyle factors, doctor's notes)
+- Experiment with ensemble models or Neural Networks
+
+![Improve AI & Data literacy in Healthcare](figure/data_lit.png){#fig-radar fig-width=8 fig-height=8 fig-align="center"}
 
 ---
 

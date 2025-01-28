@@ -478,7 +478,7 @@ Figure&nbsp;7: Analyzing Feature Distributions by Death Event
 <ul>
 <li><span style="color:red">overfitting</span></li>
 <li><span style="color:red">sensitive to small data changes</span></li>
-<li><span style="color:red">potential bias towards dominant classes in umbalanced datasets</span></li>
+<li><span style="color:red">bias towards dominant classes in unbalanced datasets</span></li>
 </ul></li>
 </ul>
 </section>
@@ -528,24 +528,18 @@ Figure&nbsp;7: Analyzing Feature Distributions by Death Event
 <ul>
 <li>Interpretability</li>
 <li>Robustness with smaller datasets</li>
-<li>Ability to balance bias and variance effectively <img data-src="figure/Model_val_process.png" data-fig-width="40%"></li>
+<li>Ability to balance bias and variance effectively</li>
 </ul>
 </section>
 <section class="slide level2">
 
-<h3 id="model-performance"><strong>Model Performance</strong></h3>
-<p>The logistic regression model achieved:</p>
-<ul>
-<li><strong>Accuracy</strong>: 0.82</li>
-<li><strong>Precision</strong>: 0.70 (moderately conservative in predicting deaths)</li>
-<li><strong>Recall</strong>: 0.74 (captures the majority of high-risk cases)</li>
-<li><strong>F1-Score</strong>: 0.72 (good balance between precision and recall)</li>
-</ul>
-</section>
+<h3 id="diagram"><strong>Diagram</strong></h3>
+
+<img data-src="figure/Model_val_process.png" data-fig-width="40%" class="r-stretch"></section>
 <section class="slide level2">
 
+<h3 id="results"><strong>Results</strong></h3>
 <p><strong>Confusion Matrix</strong></p>
-<p>The confusion matrix below shows the performance of the classification model in predicting survival outcomes:</p>
 <table class="caption-top">
 <thead>
 <tr class="header">
@@ -557,56 +551,71 @@ Figure&nbsp;7: Analyzing Feature Distributions by Death Event
 <tbody>
 <tr class="odd">
 <td><strong>Survived (0)</strong></td>
-<td>35</td>
-<td>6</td>
+<td>35 (TP)</td>
+<td>6 (FP)</td>
 </tr>
 <tr class="even">
 <td><strong>Deceased (1)</strong></td>
-<td>5</td>
-<td>14</td>
+<td>5 (FN)</td>
+<td>14 (TN)</td>
 </tr>
 </tbody>
 </table>
-<ul>
-<li><strong>True Positives</strong>: 14 patients correctly identified as deceased.</li>
-<li><strong>True Negatives</strong>: 35 patients correctly identified as survivors.</li>
-<li><strong>False Positives</strong>: 6 survivors misclassified as deceased.</li>
-<li><strong>False Negatives</strong>: 5 deaths missed by the model.</li>
+
+<img data-src="figure/accuracy.jpeg" class="quarto-figure quarto-figure-center r-stretch" data-fig-width="7"></section>
+<section class="slide level2">
+
+<h3 id="performance-matrices"><strong>Performance Matrices</strong></h3>
+
+<img data-src="figure/results_radar.png" class="quarto-figure quarto-figure-center r-stretch" data-fig-height="9"><p class="caption">
+Figure&nbsp;8: Performance Radar
+</p><ul>
+<li>Captures majority of the high-risk patients, moderately accurate, conservative</li>
+<li>Recall = True Positive Rate = 74%</li>
 </ul>
 </section>
-<section class="slide level2">
+<section id="why-do-we-want-to-improve-recall" class="slide level2">
+<h2>Why do we want to improve recall?</h2>
 
-<h3 id="key-insights"><strong>Key Insights</strong></h3>
-<ol type="1">
-<li><strong>Feature Importance</strong>:
-<ul>
-<li>Platelets and ejection fraction were the most influential features in predicting survival.</li>
-<li>Other significant features included serum creatinine and creatinine phosphokinase.</li>
-</ul></li>
-<li><strong>Challenges</strong>:
-<ul>
-<li>Class imbalance led to potential biases in the model.</li>
-<li>Limited data availability restricted the model’s ability to fully generalize.</li>
-</ul></li>
-</ol>
+<img data-src="figure/risk_awareness.png" class="quarto-figure quarto-figure-center r-stretch" data-fig-width="7" data-fig-height="7"><p class="caption">
+Figure&nbsp;9: Risk Awareness
+</p><p>“In medicine, the most dangerous thing is not to make a mistake, but to fail to see the potential risks that lie hidden” - Dr.&nbsp;Eric Topol</p>
 </section>
 <section class="slide level2">
 
-<h3 id="key-insights-1"><strong>Key Insights</strong></h3>
-<ol start="3" type="1">
-<li><strong>Opportunities for Improvement</strong>:
+<h3 id="challenges-with-healthcare-data"><strong>Challenges with Healthcare Data</strong></h3>
+<p>Patient Data is:</p>
+<pre><code>  Scarce            Incomplete              
+  Hidden (confidencial)    Messy
+  Imbalanced class       Inconsistent</code></pre>
+
+<img data-src="figure/class_imbalance.png" id="fig-radar" class="quarto-figure quarto-figure-center r-stretch" data-fig-width="7" data-fig-height="7"><p class="caption">
+Figure&nbsp;10
+</p></section>
+<section class="slide level2">
+
+
+<img data-src="figure/patient_data.png" class="quarto-figure quarto-figure-center r-stretch" data-fig-width="8" data-fig-height="8"><p class="caption">
+Figure&nbsp;11: Patient Data Sample
+</p></section>
+<section class="slide level2">
+
+<h3 id="proposed-improvements"><strong>Proposed Improvements </strong></h3>
 <ul>
-<li>Collecting a larger, more diverse dataset.</li>
-<li>Experimenting with ensemble models (e.g., Random Forest, Gradient Boosting).</li>
-</ul></li>
-</ol>
-</section>
+<li>Collect higher-quality patient data</li>
+<li>Include diverse features (genetic predispositions, lifestyle factors, doctor’s notes)</li>
+<li>Experiment with ensemble models or Neural Networks</li>
+</ul>
+
+<img data-src="figure/data_lit.png" class="quarto-figure quarto-figure-center r-stretch" data-fig-width="8" data-fig-height="8"><p class="caption">
+Figure&nbsp;12: Improve AI &amp; Data literacy in Healthcare
+</p></section>
 <section class="slide level2">
 
 <h3 id="conclusion"><strong>Conclusion</strong></h3>
 
 <img data-src="figure/conclusion_img.jpg" class="quarto-figure quarto-figure-center r-stretch" data-fig-width="10" data-fig-height="5"><p class="caption">
-Figure&nbsp;8: Image by Quasa
+Figure&nbsp;13: Image by Quasa
 </p></section>
 <section class="slide level2">
 
@@ -620,7 +629,7 @@ Figure&nbsp;8: Image by Quasa
 <h3 id="questions"><strong>Questions?</strong></h3>
 
 <img data-src="figure/panda.jpg" class="quarto-figure quarto-figure-center r-stretch" data-fig-width="15"><p class="caption">
-Figure&nbsp;9: MDS Panda
+Figure&nbsp;14: MDS Panda
 </p><div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 

@@ -153,7 +153,7 @@ The model generalizes well without overfitting.
 ---
 
 ### **Model Selection**
-We selected the logistic regression due to its:
+We selected the Logistic Regression model due to its:
 
 - Interpretability
 - Robustness with smaller datasets

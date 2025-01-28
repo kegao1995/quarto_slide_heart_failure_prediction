@@ -546,62 +546,71 @@ Figure&nbsp;7: Analyzing Feature Distributions by Death Event
 <tbody>
 <tr class="odd">
 <td><strong>Survived (0)</strong></td>
-<td>35</td>
-<td>6</td>
+<td>35 (TP)</td>
+<td>6 (FP)</td>
 </tr>
 <tr class="even">
 <td><strong>Deceased (1)</strong></td>
-<td>5</td>
-<td>14</td>
+<td>5 (FN)</td>
+<td>14 (TN)</td>
 </tr>
 </tbody>
 </table>
-<p>82% Accuracy 70% Precision 74% Recall 0.72 F1-score</p>
-<ul>
-<li>The model is moderately accurate in predicting deaths</li>
-<li>Captures majority of the high-risk patients</li>
-<li>However, model needs a serious improvement in Recall by reducing false negatives</li>
+
+<img data-src="figure/accuracy.jpeg" class="quarto-figure quarto-figure-center r-stretch" data-fig-width="7"></section>
+<section class="slide level2">
+
+<h3 id="performance-matrices"><strong>Performance Matrices</strong></h3>
+
+<img data-src="figure/results_radar.png" class="quarto-figure quarto-figure-center r-stretch" data-fig-height="9"><p class="caption">
+Figure&nbsp;8: Performance Radar
+</p><ul>
+<li>Captures majority of the high-risk patients, moderately accurate, conservative</li>
+<li>Recall = True Positive Rate = 74%</li>
 </ul>
 </section>
 <section id="why-do-we-want-to-improve-recall" class="slide level2">
 <h2>Why do we want to improve recall?</h2>
 
-<img data-src="figure/results_radar.png" class="quarto-figure quarto-figure-center r-stretch" data-fig-width="10" data-fig-height="10"><p class="caption">
-Figure&nbsp;8: Performance Radar
-</p><ul>
-<li>Risk awareness is very important in healthcare predictive modelling</li>
-<li>It’s often safer to overestimate positive outcomes than to risk missing critical conditions</li>
-</ul>
-<p><span style="font-size:18px;">“In medicine, the most dangerous thing is not to make a mistake, but to fail to see the potential risks that lie hidden” - Dr.&nbsp;Eric Topol </span></p>
+<img data-src="figure/risk_awareness.png" class="quarto-figure quarto-figure-center r-stretch" data-fig-width="7" data-fig-height="7"><p class="caption">
+Figure&nbsp;9: Risk Awareness
+</p><p>“In medicine, the most dangerous thing is not to make a mistake, but to fail to see the potential risks that lie hidden” - Dr.&nbsp;Eric Topol</p>
 </section>
 <section class="slide level2">
 
-<h3 id="challenges-in-healthcare-data-for-predictive-modeling"><strong>Challenges in Healthcare Data for Predictive Modeling</strong></h3>
-<ul>
-<li>Scarcity of healthcare data: Limited patient records available</li>
-<li>Data quality issues: Healthcare data is often incomplete, messy or hidden due to confidentiality</li>
-<li>Class imbalance in responses: Significantly fewer instances of Death Event = <code>1</code> compared to ‘0’</li>
-</ul>
+<h3 id="challenges-with-healthcare-data"><strong>Challenges with Healthcare Data</strong></h3>
+<p>Patient Data is:</p>
+<pre><code>  Scarce            Incomplete              
+  Hidden (confidencial)    Messy
+  Imbalanced class       Inconsistent</code></pre>
 
-<img data-src="figure/class_imbalance.png" id="fig-radar" class="quarto-figure quarto-figure-center r-stretch" data-fig-width="6" data-fig-height="6"><p class="caption">
-Figure&nbsp;9
+<img data-src="figure/class_imbalance.png" id="fig-radar" class="quarto-figure quarto-figure-center r-stretch" data-fig-width="7" data-fig-height="7"><p class="caption">
+Figure&nbsp;10
 </p></section>
 <section class="slide level2">
 
-<h3 id="proposed-improvements"><strong>Proposed Improvements: </strong></h3>
+
+<img data-src="figure/patient_data.png" class="quarto-figure quarto-figure-center r-stretch" data-fig-width="8" data-fig-height="8"><p class="caption">
+Figure&nbsp;11: Patient Data Sample
+</p></section>
+<section class="slide level2">
+
+<h3 id="proposed-improvements"><strong>Proposed Improvements </strong></h3>
 <ul>
-<li>Collect higher-quality patient data (clean, complete and diverse data)</li>
-<li>Include additional features like genetic predispositions, family medical history and lifestyle factors</li>
-<li>Experimenting with ensemble models (e.g., Random Forest, Gradient Boosting) or Neural Networks</li>
+<li>Collect higher-quality patient data</li>
+<li>Include diverse features (genetic predispositions, lifestyle factors, doctor’s notes)</li>
+<li>Experiment with ensemble models or Neural Networks</li>
 </ul>
-<p>This can be achieved by improving data and AI literacy and ensuring medical professionals actively engage in maintaining clean, diverse and complete medical records</p>
-</section>
+
+<img data-src="figure/data_lit.png" class="quarto-figure quarto-figure-center r-stretch" data-fig-width="8" data-fig-height="8"><p class="caption">
+Figure&nbsp;12: Improve AI &amp; Data literacy in Healthcare
+</p></section>
 <section class="slide level2">
 
 <h3 id="conclusion"><strong>Conclusion</strong></h3>
 
 <img data-src="figure/conclusion_img.jpg" class="quarto-figure quarto-figure-center r-stretch" data-fig-width="10" data-fig-height="5"><p class="caption">
-Figure&nbsp;10: Image by Quasa
+Figure&nbsp;13: Image by Quasa
 </p></section>
 <section class="slide level2">
 
@@ -615,7 +624,7 @@ Figure&nbsp;10: Image by Quasa
 <h3 id="questions"><strong>Questions?</strong></h3>
 
 <img data-src="figure/panda.jpg" class="quarto-figure quarto-figure-center r-stretch" data-fig-width="15"><p class="caption">
-Figure&nbsp;11: MDS Panda
+Figure&nbsp;14: MDS Panda
 </p><div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 

@@ -175,11 +175,12 @@ We selected the logistic regression due to its:
 
 ---
 
-![Performance Radar](figure/results_radar.png){#fig-radar fig-width=10 fig-height=10 fig-align="center"}
+### **Performance Matrices**
 
-- Captures majority of the high-risk patients
-- Moderately accurate - conservative
-![](figure/recall.jpeg){fig-width=7 fig-align="rigth"}
+![Performance Radar](figure/results_radar.png){#fig-radar fig-height=9 fig-align="center"}
+
+- Captures majority of the high-risk patients, moderately accurate, conservative
+- Recall = True Positive Rate = 74%
 
 ---
 
@@ -189,28 +190,30 @@ We selected the logistic regression due to its:
 
 "In medicine, the most dangerous thing is not to make a mistake, but to fail to see the potential risks that lie hidden"  - Dr. Eric Topol 
 
+
 ---
 
-### **Challenges in Healthcare Data for Predictive Modeling**
+### **Challenges with Healthcare Data**
 
 Patient Data is:
 
-       Scarce            Incomplete              
- Hidden due to confidenciality    Messy
-   Imbalanced class       Inconsistent
 
-![](figure/class_imbalance.png){#fig-radar fig-width=8 fig-height=8 fig-align="center"}
+      Scarce            Incomplete              
+      Hidden (confidencial)    Messy
+      Imbalanced class       Inconsistent
+
+![](figure/class_imbalance.png){#fig-radar fig-width=7 fig-height=7 fig-align="center"}
 
 ---
 
-![](figure/patient_data.png){#fig-radar fig-width=8 fig-height=8 fig-align="center"}
+![Patient Data Sample](figure/patient_data.png){#fig-radar fig-width=8 fig-height=8 fig-align="center"}
 
 ---
 
 ### **Proposed Improvements **
 
 - Collect higher-quality patient data 
-- Include diverse features (genetic predispositions, lifestyle factors)
+- Include diverse features (genetic predispositions, lifestyle factors, doctor's notes)
 - Experiment with ensemble models or Neural Networks
 
 ![Improve AI & Data literacy in Healthcare](figure/data_lit.png){#fig-radar fig-width=8 fig-height=8 fig-align="center"}

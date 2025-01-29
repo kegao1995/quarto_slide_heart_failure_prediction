@@ -203,13 +203,15 @@ We selected the Logistic Regression model due to its:
 Patient Data is:
 
 
-      Scarce            Incomplete              
+           Scarce            Incomplete              
       Hidden (confidencial)    Messy
       Imbalanced class       Inconsistent
 
 ![](figure/class_imbalance.png){#fig-radar fig-width=7 fig-height=7 fig-align="center"}
 
 ---
+
+### **This is a lot!**
 
 ![Patient Data Sample](figure/patient_data.png){#fig-radar fig-width=8 fig-height=8 fig-align="center"}
 

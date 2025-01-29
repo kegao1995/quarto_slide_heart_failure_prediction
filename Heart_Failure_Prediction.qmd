@@ -173,8 +173,8 @@ We selected the Logistic Regression model due to its:
 
 | **Actual \ Predicted** | **Survived (0)** | **Deceased (1)** |
 |------------------------|------------------|------------------|
-| **Survived (0)**       | 35 (TP)              | 6  (FP)              |
-| **Deceased (1)**       | 5  (FN)              | 14  (TN)            |
+| **Survived (0)**       | 35               | 6                |
+| **Deceased (1)**       | 5                | 14               |
 
 ![](figure/accuracy.jpeg){fig-width=7 fig-align="center"}
 

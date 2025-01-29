@@ -233,6 +233,12 @@ Patient Data is:
 
 ---
 
+### **Questions?**
+
+![MDS Panda](figure/panda.jpg){#fig-panda fig-width=15 fig-align="center"} 
+
+---
+
 ### **References**  
 
 Chicco, D., & Jurman, G. (2020). *Machine learning can predict survival of patients with heart failure from serum creatinine and ejection fraction alone*. BMC Medical Informatics.  
@@ -240,10 +246,3 @@ Chicco, D., & Jurman, G. (2020). *Machine learning can predict survival of patie
 Dua, D., & Graff, C. (2017). *UCI Machine Learning Repository*. University of California, Irvine, School of Information; Computer Sciences. [http://archive.ics.uci.edu/ml](http://archive.ics.uci.edu/ml)  
 
 Mayo Clinic. (n.d.). *Heart failure - Symptoms and causes*. Mayo Clinic. Retrieved January 25, 2025, from [https://www.mayoclinic.org/diseases-conditions/heart-failure/symptoms-causes/syc-20373142](https://www.mayoclinic.org/diseases-conditions/heart-failure/symptoms-causes/syc-20373142)  
-
----
-
-### **Questions?**
-
-![MDS Panda](figure/panda.jpg){#fig-panda fig-width=15 fig-align="center"} 
-

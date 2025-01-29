@@ -133,7 +133,7 @@ We compared three algorithms:
    
 | **Model**              | **Mean test score**               |
 |------------------------|-----------------------------------|
-| **KNN**                | 0.777899                          |
+| **KNN**                | 0.777899 (with n_neighbors = 19)  |
 | **Logistic Regression**| 0.828261 (with C = 0.0001)        |
 
    - Best model: <span style="color:blue">Logistic Regression model</span>
@@ -157,7 +157,7 @@ We selected the Logistic Regression model due to its:
 
 - Interpretability
 - Robustness with smaller datasets
-- Ability to balance bias and variance effectively
+- Probability outputs
 
 ---
 
